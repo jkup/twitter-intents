@@ -22,7 +22,8 @@ class TwitterIntents {
                     'TwitterIntents',
                     'admin_widget_callback'
                 ),
-                $screen
+                $screen,
+                'side'
             );
         }
     }
