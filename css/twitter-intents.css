@@ -1,0 +1,44 @@
+.TwitterIntents {
+    width: 280px;
+    margin: 0 auto;
+}
+
+.TwitterIntents a {
+    text-decoration: none !important;
+}
+
+.TwitterIntents span {
+    background-image: url('../images/sprite.png');
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.TwitterIntents--reply {
+    background-position: 0 0;
+    width: 36px;
+    height: 26px;
+}
+
+.TwitterIntents--reply:hover {
+    background-position: -46px 0;
+}
+
+.TwitterIntents--retweet {
+    background-position: 0 -36px;
+    width: 42px;
+    height: 24px;
+}
+
+.TwitterIntents--retweet:hover {
+    background-position: -54px -36px;
+}
+
+.TwitterIntents--favorite {
+    background-position: 0 -73px;
+    width: 31px;
+    height: 29px;
+}
+
+.TwitterIntents--favorite:hover {
+    background-position: -42px -73px;
+}

@@ -99,21 +99,28 @@ class TwitterIntents {
         $tweet_id = get_post_meta($id, '_twitter_intents_id', true);
 
         if (is_numeric($tweet_id)) {
-            echo '<div class="social">
-                <a href="https://twitter.com/intent/tweet?in_reply_to=' . $tweet_id . '">
-                    <span>Reply</span>
+        ?>
+            <div class="TwitterIntents">
+                <a href="https://twitter.com/intent/tweet?in_reply_to=<?php echo $tweet_id; ?>">
+                    <span class="TwitterIntents--reply"></span>
                 </a>
-                <a href="https://twitter.com/intent/retweet?tweet_id=' . $tweet_id . '">
-                    <span>Retweet</span>
+                <a href="https://twitter.com/intent/retweet?tweet_id=<?php echo $tweet_id; ?>">
+                    <span class="TwitterIntents--retweet"></span>
                 </a>
-                <a href="https://twitter.com/intent/favorite?tweet_id=' . $tweet_id . '">
-                    <span>Favorite</span>
+                <a href="https://twitter.com/intent/favorite?tweet_id=<?php echo $tweet_id; ?>">
+                    <span class="TwitterIntents--favorite"></span>
                 </a>
-            </div>';
+            </div>
+        <?php
         }
+    }
+
+    public static function add_stylesheet() {
+        wp_enqueue_style( 'core', plugins_url() . '/twitter-intents/css/twitter-intents.css', false ); 
     }
 }
 
 add_filter('the_content', array('TwitterIntents', 'show_intents'));
 add_action('save_post', array('TwitterIntents', 'save_tweet_id'));
-add_action( 'add_meta_boxes', array('TwitterIntents', 'add_admin_widget'));
+add_action('add_meta_boxes', array('TwitterIntents', 'add_admin_widget'));
+add_action('wp_enqueue_scripts', array('TwitterIntents', 'add_stylesheet'));
