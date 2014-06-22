@@ -42,7 +42,7 @@ class TwitterIntents {
          * Use get_post_meta() to retrieve an existing value
          * from the database and use the value for the form.
          */
-        $value = get_post_meta($post->ID, '_my_meta_value_key', true);
+        $value = get_post_meta($post->ID, '_twitter_intents_id', true);
 
         echo '<label for="TwitterIntents_new_field">';
         _e('Tweet ID: ', 'TwitterIntents_textdomain');
@@ -93,26 +93,28 @@ class TwitterIntents {
         update_post_meta($post_id, '_twitter_intents_id', $my_data);
     }
 
-    public static function show_intents() {
+    public static function show_intents($content) {
         $id = get_the_ID();
 
         $tweet_id = get_post_meta($id, '_twitter_intents_id', true);
 
         if (is_numeric($tweet_id)) {
-        ?>
-            <div class="TwitterIntents">
-                <a href="https://twitter.com/intent/tweet?in_reply_to=<?php echo $tweet_id; ?>">
-                    <span class="TwitterIntents--reply"></span>
-                </a>
-                <a href="https://twitter.com/intent/retweet?tweet_id=<?php echo $tweet_id; ?>">
-                    <span class="TwitterIntents--retweet"></span>
-                </a>
-                <a href="https://twitter.com/intent/favorite?tweet_id=<?php echo $tweet_id; ?>">
-                    <span class="TwitterIntents--favorite"></span>
-                </a>
-            </div>
-        <?php
+            $content .= "
+                <div class='TwitterIntents'>
+                    <a href='https://twitter.com/intent/tweet?in_reply_to={$tweet_id}'>
+                        <span class='TwitterIntents--reply'></span>
+                    </a>
+                    <a href='https://twitter.com/intent/retweet?tweet_id={$tweet_id}'>
+                        <span class='TwitterIntents--retweet'></span>
+                    </a>
+                    <a href='https://twitter.com/intent/favorite?tweet_id={$tweet_id}'>
+                        <span class='TwitterIntents--favorite'></span>
+                    </a>
+                </div>
+            ";
         }
+
+        return $content;
     }
 
     public static function add_stylesheet() {
