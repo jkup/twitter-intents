@@ -26,6 +26,12 @@ To Use:
 4. Edit the post and add the Tweet ID under the 'Twitter Intents' field
 5. You should see the Twitter icons appear at the bottom of your post
 
+== Screenshots ==
+
+1. After Publishing your post and tweeting a link to it. Copy the tweet ID.
+2. Paste it in your edit post / page screen.
+3. Check the bottom of your post / page!
+
 == Changelog ==
 
 = 0.1.1 =
