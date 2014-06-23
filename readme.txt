@@ -6,11 +6,11 @@ Tested up to: 3.9
 Stable tag: 0.1.0
 License: GPLv2
 
-Twitter Intents allows you to add Twitter intents functionality to your blog. Easily let your readers reply, retweet, or favorite your posts!
-
 == Description ==
 
-Twitter Intents
+Twitter Intents allows you to add Twitter intents functionality to your blog. Easily let your readers reply, retweet, or favorite your posts!
+
+It adds a widget to the admin screen for creating new posts and pages. All you have to do is publish a tweet linking to your post, grab the tweet ID and stick it in the 'Tweet ID' field. Then check out your post and you should see interactive Twitter intents icons at the bottom of the page!
 
 == Installation ==
 
@@ -27,6 +27,10 @@ To Use:
 5. You should see the Twitter icons appear at the bottom of your post
 
 == Changelog ==
+
+= 0.1.1 =
+
+* Added description for plugin page.
 
 = 0.1.0 =
 
